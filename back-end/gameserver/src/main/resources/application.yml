@@ -1,4 +1,14 @@
+#spring:
+#name: local
+#server:
+#    port: 8081
+
 spring:
-name: local
-server:
-    port: 8081
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jfinal_demo
+    username: root
+    password: 1qaz2wsx
+
+  mybatis:
+    type-aliases-package: com.proschan.gameserver.model
