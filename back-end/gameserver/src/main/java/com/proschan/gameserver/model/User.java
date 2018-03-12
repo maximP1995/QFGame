@@ -9,40 +9,49 @@ import java.util.Date;
  * Description:
  */
 public class User {
-    private Long id;
-    private String name;
-    private Integer age;
+    private int id;
+    private String username;
+    private int age;
+    private Date ctm;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public User() {
     }
 
-    public Long getId() {
+    public User(String username, int age) {
+        this.username = username;
+        this.age = age;
+        this.ctm = new Date();
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
+    }
+
+    public Date getCtm() {
+        return ctm;
+    }
+
+    public void setCtm(Date ctm) {
+        this.ctm = ctm;
     }
 }
