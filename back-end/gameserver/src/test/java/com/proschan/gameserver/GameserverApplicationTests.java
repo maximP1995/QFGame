@@ -1,35 +1,27 @@
 package com.proschan.gameserver;
 
-import com.proschan.gameserver.web.HelloController;
-import org.junit.Before;
+
+import com.proschan.gameserver.mapper.UserMapper;
+import com.proschan.gameserver.model.TUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-@RunWith(SpringJUnit4ClassRunner.class)
-//@SpringApplicationConfiguration(classes = MockServletContext.class)
-@WebAppConfiguration
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class GameserverApplicationTests {
-	private MockMvc mvc;
-	@Before
-	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
-	}
+
+
+//	@Autowired
+	private UserMapper userMapper;
 
 	@Test
-	public void getHello() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo("Hello World")));
+	public void test() {
+//		userMapper.insert("winterchen", "123456", "12345678910");
+		TUser u = userMapper.findUserByPhone("12345678910");
+		System.out.println(u.toString() + "!");
+//		Assert.assertEquals("winterchen", u.getName());
 	}
-
 }

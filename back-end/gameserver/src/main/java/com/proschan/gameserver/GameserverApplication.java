@@ -6,7 +6,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-//@MapperScan("com.proschan.gameserver.mapper")
 public class GameserverApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
@@ -18,8 +17,4 @@ public class GameserverApplication extends SpringBootServletInitializer {
         return application.sources(GameserverApplication.class);
     }
 
-//	@RequestMapping("/")
-//	String index() {
-//		return "Welcome to game server!";
-//	}
 }

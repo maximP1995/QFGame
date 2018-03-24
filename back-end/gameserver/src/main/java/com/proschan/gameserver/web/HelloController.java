@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Date:2018/3/12
  * Description:
  */
-@RestController
+//@RestController
 public class HelloController {
 
     @ResponseBody

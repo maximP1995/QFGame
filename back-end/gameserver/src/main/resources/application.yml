@@ -10,5 +10,5 @@ spring:
     username: root
     password: 1qaz2wsx
 
-  mybatis:
-    type-aliases-package: com.proschan.gameserver.model
+#mybatis:
+#  type-aliases-package: com.proschan.gameserver.model
